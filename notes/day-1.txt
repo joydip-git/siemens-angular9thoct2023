@@ -24,6 +24,7 @@ data types:
 declare a variable in JS:
 use "var" keyword
 
+
 all scripting languages follow a guideline relaesed by ECMA, known as ECMAScript (ES)
 
 JS new features:6.0 (ES 6.0 - 2015)
@@ -34,6 +35,15 @@ JS Objects:
 	an object in JS is just collection of keys and values
 	you can dynamically expand the object by ading additional proprties
 	you can access the members of JS object, using dot operator (.) and indexer (obj['prop-name'])
+
+JS functions:
+	a. declaration syntax
+	function function-name(arguments){
+	}
+
+	b. expression syntax
+	var function-name = function(arguments){
+	}
 
 
 JS issues:
