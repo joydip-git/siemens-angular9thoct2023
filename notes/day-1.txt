@@ -29,12 +29,17 @@ all scripting languages follow a guideline relaesed by ECMA, known as ECMAScript
 
 JS new features:6.0 (ES 6.0 - 2015)
 	const keyword
+	templated string (string interpolation)
 
 
 JS Objects:
 	an object in JS is just collection of keys and values
 	you can dynamically expand the object by ading additional proprties
 	you can access the members of JS object, using dot operator (.) and indexer (obj['prop-name'])
+
+	ways to create object in JS:
+	a. object literal syntax
+	b. constructor function
 
 JS functions:
 	a. declaration syntax
@@ -44,6 +49,10 @@ JS functions:
 	b. expression syntax
 	var function-name = function(arguments){
 	}
+
+
+JS Callback:
+	calling a function from another function using reference to the function	
 
 
 JS issues:
