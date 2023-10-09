@@ -13,3 +13,6 @@ index.js
 	create an array to store employees
 	create some employee objects and save them in that array
 	iterate through the array and calculate salary of every employee and print the same
+
+	filter those employees from the array whose salary is more than 10000
+	sort the employees based on ascending order of the names
