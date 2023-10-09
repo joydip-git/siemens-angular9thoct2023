@@ -1,3 +1,4 @@
+CSS:
 property-name:value
 
 background-color:black
@@ -6,3 +7,46 @@ a. in-line style
 b. out-line style
 		i. in the HTML page: using <style> tag in either <head> or <body>
 		ii. in separate CSS file. link the file with HTML file using <link> tag in either <head> or <body>
+
+JavaScript:
+	a. in the HTML page, using <script> tag in <head> or <body>
+	b. separate file (with extension .js) and link it using <script> tag in <head> or <body>
+
+JS engines:
+	chrome: V8 
+	safari: JS Core
+	firefox: Spidermonkey	
+
+data types:
+	string, boolean, number, object
+	undefined, NaN, null, infinity
+
+declare a variable in JS:
+use "var" keyword
+
+all scripting languages follow a guideline relaesed by ECMA, known as ECMAScript (ES)
+
+JS new features:6.0 (ES 6.0 - 2015)
+	const keyword
+
+
+JS Objects:
+	an object in JS is just collection of keys and values
+	you can dynamically expand the object by ading additional proprties
+	you can access the members of JS object, using dot operator (.) and indexer (obj['prop-name'])
+
+
+JS issues:
+	no strict data typing
+	no static type checking
+
+
+TypeScript:
+	a. strict data typing
+	b. static type checking
+
+TS can't be understood by any browser, because there is no TS engine in browser. Hence the TS code has to be used as development level language and then it has to be converted into JS by using a tool.
+process of converting TS to JS: transpilation (transformation + compilation)
+tool to convert TS to JS: transpiler 
+	
+	
