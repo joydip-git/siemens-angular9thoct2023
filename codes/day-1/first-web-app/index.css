@@ -1,0 +1,24 @@
+/* out-line styling */
+/* a. element selector */
+/* h2 {
+            background-color: burlywood;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 5px;
+        } */
+
+/* id selector */
+#headerElement {
+  background-color: burlywood;
+}
+
+#footerElement {
+  background-color: antiquewhite;
+}
+
+/* class selector */
+.common-style {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 5px;
+}

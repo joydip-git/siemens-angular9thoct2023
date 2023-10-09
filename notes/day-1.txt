@@ -1,0 +1,8 @@
+property-name:value
+
+background-color:black
+
+a. in-line style
+b. out-line style
+		i. in the HTML page: using <style> tag in either <head> or <body>
+		ii. in separate CSS file. link the file with HTML file using <link> tag in either <head> or <body>
