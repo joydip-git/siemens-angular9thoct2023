@@ -1,0 +1,7 @@
+https://github.com/joydip-git/siemens-angular9thoct2023
+
+Roadmap to Angular:
+HTML, CSS and JavaScript
+Node JS
+TypeScript
+Angular
