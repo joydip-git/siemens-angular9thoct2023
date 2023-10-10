@@ -1,0 +1,38 @@
+1. browser do not have TS engine. so, browser can't understand the TS code.
+2. Browser do not understand a module in JS/TS. So, browser will not be able to load other modules except the main JS file.
+
+1. solution: 	convert TS code back to JS
+	tool: typescript compiler (tsc)
+
+	installation options:
+	a. global (in the system - every application can use it for transpilation)
+	b. local to an application: only that application can use the tool
+
+	install:
+	using a tool - Node Package Manager (npm)
+	
+	command:
+	a. installation as part of an application (local)
+	>npm i/install typescript -D
+
+	b. global installation
+	>npm i/install typescript --global
+
+	configuration file for TSC:
+	tsconfig.json (must be placed at the root of the directory)
+
+	generate the file using command:
+	>.\node_modules\.bin\tsc --init
+
+
+package.json => contains dependecies list as well as other information about your application/package, such as name, version, author, scripts etc.
+create package.json file
+a. manually
+b. using npm tool
+	command: > npm init --yes (without walkthrough) or >npm init (with walkthrough)
+Note: the file must be placed at the root of the application directory
+
+
+	node_modules: contains all dependencies (packages)
+	node_modules\.bin => executables of different dependencies
+	package-lock.json => metadata about the dependencies
