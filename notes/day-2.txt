@@ -1,5 +1,6 @@
 1. browser do not have TS engine. so, browser can't understand the TS code.
 2. Browser do not understand a module in JS/TS. So, browser will not be able to load other modules except the main JS file.
+	
 
 1. solution: 	convert TS code back to JS
 	tool: typescript compiler (tsc)
@@ -36,3 +37,34 @@ Note: the file must be placed at the root of the application directory
 	node_modules: contains all dependencies (packages)
 	node_modules\.bin => executables of different dependencies
 	package-lock.json => metadata about the dependencies
+
+
+modules in JS/TS:
+
+	module formats:
+	a. ES6 format:
+		export class Employee{}
+		import { Employee } from './employee'
+
+	b. commonjs:	
+		module.exports = { Employee:Employee}
+		const { Employee } = require('./employee')
+
+	c. Asynchronous module definition (AMD) format
+		define(function(){
+			class Employee{}
+		})
+	d. Universal Module Definition (UMD) format
+
+	module loader:
+		requirejs => understands only AMD format
+		systemjs
+
+requirejs: JavaScript file and module loader. majorly used for in-browse purpose.
+download: >npm i rquirejs
+link the require.js file in ./node_modules/requirejs folder with HTML file using <script> tag
+
+2. solution: use module loader s/w for browser, preferrably requirejs
+	note: requirejs understands ONLY AMD format module, hence if you have written code in anyother format, get that module format converted to AMD format
+	use typescript transpiler for that purpose
+	typescript transpiler converts any module format into commonjs format by default

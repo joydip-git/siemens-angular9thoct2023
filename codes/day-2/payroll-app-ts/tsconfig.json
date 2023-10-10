@@ -4,6 +4,7 @@
     "outDir": "dist",
     "target": "ES5",
     "strict": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "module": "AMD"
   }
 }
