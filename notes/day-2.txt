@@ -7,6 +7,7 @@
 
 	installation options:
 	a. global (in the system - every application can use it for transpilation)
+		global installation path: C:\Users\<user-name>\AppData\Roaming\npm
 	b. local to an application: only that application can use the tool
 
 	install:
@@ -68,3 +69,22 @@ link the require.js file in ./node_modules/requirejs folder with HTML file using
 	note: requirejs understands ONLY AMD format module, hence if you have written code in anyother format, get that module format converted to AMD format
 	use typescript transpiler for that purpose
 	typescript transpiler converts any module format into commonjs format by default
+
+
+
+
+Angular:
+	directory (app)
+		app.component.ts
+		
+
+
+	order(folder)
+		order.module.ts
+
+		components(folder)
+			order-summary (folder)
+				order-summary.component.html
+				order-summary.component.css
+				order-summary.component.ts
+	
