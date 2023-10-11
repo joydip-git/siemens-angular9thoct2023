@@ -18,7 +18,21 @@ app
 	data/repository (folder)
 		products.ts => should contain an array (exportable) with sample product data
 
-	authentication (folder for "authentication" feature module)
+	components
+		home (folder for HomeComponent)
+			home.component.ts
+			home.component.css
+			home.component.html
+
+		dashboard (folder for DashboardComponent)
+			dashboard.component.ts
+			dashboard.component.css
+			dashboard.component.html
+
+		page-not-found (folder for PageNotFoundComponent)
+			page-not-found.component.ts
+			page-not-found.component.css
+			page-not-found.component.html	
 
 	products (folder for "products" feature module)
 		products.module.ts
@@ -54,5 +68,21 @@ app
 
 
 		validators (folder)
+
+	authentication (folder for "authentication" feature module)
+			authentication.module.ts
+
+			components (folder)
+
+				login (folder for LoginComponent)
+					login.component.ts
+					login.component.html
+					login.component.css
+
+				registration (folder for RegistrationComponent)
+					registration.component.ts
+					registration.component.css
+					registration.component.html
+				
 
 

@@ -1,0 +1,35 @@
+<h2>
+    List of Products
+</h2>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of productRecords">
+            <td>
+                <img [src]="p.imageUrl" alt="NA" [title]="p.productName">
+            </td>
+            <td>
+                {{p.productName}}
+            </td>
+            <td>
+                {{p.price}}
+            </td>
+            <td>
+                {{p.starRating}}
+            </td>
+            <td>
+                <button type="button">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

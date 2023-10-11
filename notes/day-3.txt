@@ -99,6 +99,26 @@ directives:
 			they are used like an attribute to an element (without any special character)
 
 	c. component directive (components are actually one type directive)
+
+
+Life-cycle of a component:
+	creation:
+			constructor gets invoked	
+			changes event gets fired when a nested component receives any data from its parent component
+			init event fired
+
+	updation:
+			changes event gets fired
+
+	destruction:
+			destroy event gets fired when the cmponent gets destroyed
+		
+@angular/core
+event name				interface			method
+-------------------------------------------------
+X							OnX						ngOnX
+
+
  
 
 
