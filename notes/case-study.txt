@@ -5,3 +5,54 @@ b. the table in the component displaying list of products, will also have a colu
 c. if you click on the image of the product in every row of the table, you will be redirected to another component which will render the details of that selected product
 d. on this component an edit button must be placed, clicking which one should be redirected to another component where the same product details can be edied and saved
 e. the application must have facility to add a new product, too
+
+
+application structure:
+		
+app
+	app.component.ts
+	app.component.css
+	app.component.html
+	app.module.ts
+
+	data/repository (folder)
+		products.ts => should contain an array (exportable) with sample product data
+
+	authentication (folder for "authentication" feature module)
+
+	products (folder for "products" feature module)
+		products.module.ts
+
+		components ( folder)
+			product-list (component folder containing ProductListComponent)
+				product-list.component.ts
+				product-list.component.css
+				product-list.component.html		
+
+			product-detail (component folder containing ProductDetailComponent)
+				product-detail.component.ts
+				product-detail.component.css
+				product-detail.component.html	
+
+			add-product (component folder containing AddProductComponent)
+				add-product.component.ts
+				add-product.component.css
+				add-product.component.html	
+
+			update-product (component folder containing UpdateProductComponent)
+				update-product.component.ts
+				update-product.component.css
+				update-product.component.html	
+		
+		pipes (folder)
+
+
+		services( folder)
+
+
+		directives (folder)
+
+
+		validators (folder)
+
+
