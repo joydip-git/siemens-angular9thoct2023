@@ -1,0 +1,21 @@
+<h2>
+    {{ title }}
+</h2>
+
+<div>
+    <label for="txtTitle">
+        Enter New Title: &nbsp; </label>
+    <input type="text" id="txtTitle" value="{{title}}" (keyup)="changeTitle(txtRef.value)" #txtRef>
+</div>
+
+<br><br>
+
+<div [style.width.px]="divWidth" style="background-color: antiquewhite;">
+    Name: &nbsp; <span>{{personInfo.name}}</span>
+    <br>
+    Id: &nbsp; <span>{{personInfo.id}}</span>
+</div>
+<!-- 
+
+    document.createElement('h2').innerHTML = new FeaturesComponent().title
+-->

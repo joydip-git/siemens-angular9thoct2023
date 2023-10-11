@@ -1,0 +1,75 @@
+Angular:
+	a. Client-side framework for UI development
+	b. Single Page Application (SPA)
+	c. runs on the client side browser
+	d. JavaScript framework
+	e. single threaded
+	f. provides developers to use MV-* architecture
+
+Angular features:
+	a. binding
+			i.  data binding
+			ii. event binding
+	b. forms
+	c. pass data to a nested component from a parent and vice versa
+	d. pipe
+	e. service and DI
+	f. display a list of data
+	g. routing
+	h. authentication and authorization in angular
+	i. interceptors
+
+
+1. component		=> class XComponent{}			=> @Component()
+2. directive		=> class XDirective{}			=> @Directive()
+3. pipe					=> class XPipe{}					=> @Pipe()
+4. service			=> class XService{}				=> @Injectable() ***
+5. module				=> class XModule{}				=> @NgModule()
+
+@NgModule({
+	
+	//register components, pipes and directives
+	declarations:[AppComponent, AppPipe, AppDirective],
+
+	//register services
+	providers:[AppService],
+
+	//register built-in modules of Angular and other feature modules of the application
+	imports:[BrowserModule,OrderModule, PaymentModule, CartModule],
+
+	//mention the name of at least one component registered with this or other feature module
+	bootstrap:[AppComponent],
+
+	//mention the name of assets that should be exposed to other modules
+	//mention the name of ONLY components, directives, pipes and modules, NOT services
+	exports:[]
+
+})
+export class AppModule{
+}
+
+@NgModule({
+	declarations:[OrderComponent, OrderPipe, OrderDirective],
+	providers:[OrderService],
+  imports:[CommonModule, RouterModule],
+  bootstrap:[],
+  exports:[OrderComponent]
+})
+export class OrderModule{
+}
+
+i.Data Binding: to pass data from code to view of the same component
+	a. syntax: interpolation {{ <class-prop-name> }}
+	b. syntax: property binding
+	<tag-name [attribute-name]="class-prop-name"></tag-name>
+
+ii. Event Binding: to pass data from view to the code of the same component
+	syntax: 
+
+
+title		h2
+title		input[type='text'].value (#txtRef)
+divWidth	div
+ 
+
+
