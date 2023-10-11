@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FeaturesComponent } from "./components/features/features.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     //register components, directives, pipes
@@ -9,7 +10,7 @@ import { FeaturesComponent } from "./components/features/features.component";
     providers: [],
 
     //register built-in or features modules
-    imports: [],
+    imports: [CommonModule],
 
     //mention bootstrapper component(s)
     bootstrap: [],

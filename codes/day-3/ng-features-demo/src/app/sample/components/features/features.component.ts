@@ -14,6 +14,7 @@ export class FeaturesComponent {
         id: 1
     }
     divWidth = 300
+    names = ['vinod', 'ramnath', 'anil kumar']
 
     changeTitle(arg: string) {
         this.title = arg

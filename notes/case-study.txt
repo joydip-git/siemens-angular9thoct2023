@@ -1,0 +1,7 @@
+Product Management System
+
+a. display a list of products through a table design using a component
+b. the table in the component displaying list of products, will also have a column to delete record by a click of a button
+c. if you click on the image of the product in every row of the table, you will be redirected to another component which will render the details of that selected product
+d. on this component an edit button must be placed, clicking which one should be redirected to another component where the same product details can be edied and saved
+e. the application must have facility to add a new product, too

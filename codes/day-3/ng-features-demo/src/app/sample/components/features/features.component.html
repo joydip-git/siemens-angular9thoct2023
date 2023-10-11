@@ -16,6 +16,18 @@
     Id: &nbsp; <span>{{personInfo.id}}</span>
 </div>
 <!-- 
-
+for(let name of names){
+    document.createElement('li').innerText = name
+}
     document.createElement('h2').innerHTML = new FeaturesComponent().title
 -->
+
+<ng-template #alternate>
+    <span>No names in the collection</span>
+</ng-template>
+
+<ul *ngIf="names.length>0;else alternate">
+    <li *ngFor="let name of names">
+        {{name}}
+    </li>
+</ul>

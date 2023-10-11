@@ -70,6 +70,35 @@ ii. Event Binding: to pass data from view to the code of the same component
 title		h2
 title		input[type='text'].value (#txtRef)
 divWidth	div
+
+*ngFor
+----------------------
+<li *ngFor="let name of names">
+
+@Directive({
+	selector:'[ngFor]'
+})
+export class NgForDirective{}
+
+@NgModule({ 
+	declarations:[NgForDirective], 
+	exports:[NgForDirective]
+})
+export class CommonModule{}
+
+Package: @angular/common
+
+directives:
+	a. structural directive (*ngFor, *ngSwitch, *ngIf, *ngIfElse)
+			they are used to manipulate DOM (structure of DOM)
+			they are used like an attribute to an element (with *)
+
+	b. attribute directive (ngClass, ngStyle, ngForm, ngModel etc.)
+			they are used to extend the behavior of any existing element
+			it DOES NOT manipulate DOM
+			they are used like an attribute to an element (without any special character)
+
+	c. component directive (components are actually one type directive)
  
 
 
