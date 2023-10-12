@@ -3,33 +3,49 @@
 </h2>
 <br>
 
-<table>
-    <thead>
-        <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Rating</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of productRecords">
-            <td>
-                <img [src]="p.imageUrl" alt="NA" [title]="p.productName">
-            </td>
-            <td>
-                {{p.productName}}
-            </td>
-            <td>
-                {{p.price}}
-            </td>
-            <td>
-                {{p.starRating}}
-            </td>
-            <td>
-                <button type="button">Delete</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<ng-template #loadingTemplate>
+    <span>Loading....please wait</span>
+</ng-template>
+
+<ng-template #errorTemplate>
+    <span>{{errorMessage}}</span>
+</ng-template>
+
+<ng-template #noDataTemplate>
+    <span>No products found...</span>
+</ng-template>
+
+<div *ngIf="isRequestComplete;else loadingTemplate">
+    <div *ngIf="errorMessage=='';else errorTemplate">
+        <table *ngIf="productRecords && productRecords.length>0;else noDataTemplate">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of productRecords">
+                    <td>
+                        <img [src]="p.imageUrl" alt="NA" [title]="p.productName">
+                    </td>
+                    <td>
+                        {{p.productName}}
+                    </td>
+                    <td>
+                        {{p.price}}
+                    </td>
+                    <td>
+                        {{p.starRating}}
+                    </td>
+                    <td>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

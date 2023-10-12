@@ -30,17 +30,23 @@ Backend description:
 URL									 		METHOD		DATA				RESPONSE
 ----------------------------------------------------------------------------------------
 products:
+
+get all products:
 http://127.0.0.1:3003/products 			GET		NA			{"message":"", "data":[{},{},..] }
 
+get a single product by id:
 http://127.0.0.1:3003/products/{id} 	GET		id			{"message":"", "data":{} }
 http://127.0.0.1:3003/products/{id} 	GET		id			{"message":"", "data":null }
 
+adding a new product in the backend:
 http://127.0.0.1:3003/products 			POST		product	{"message":"", "data":[{},{},..] }
 http://127.0.0.1:3003/products 			POST		product	{"message":"", "data":null }
 
+updating an existing product in the backend:
 http://127.0.0.1:3003/products/{id}		PUT	product,id	{"message":"", "data":[{},{},..] }
 http://127.0.0.1:3003/products/{id}		PUT	product,id	{"message":"", "data":null }
 
+deleting an existing product in the backend:
 http://127.0.0.1:3003/products/{id} 	DELETE	id			{"message":"", "data":[{},{},..] }
 http://127.0.0.1:3003/products/{id} 	DELETE	id			{"message":"", "data":null }
 
@@ -68,6 +74,46 @@ In angular, whoever needs DI of any service, that someone must be decorated with
 
 If you ask for DI of any service in another service, the another service must be decorated with @Injectable()
 best practice: always use @Injectable() with service class
+
+
+
+Routing: 
+package-name: @angular/router
+module-name: RouterModule
+built-in 
+	services: Router, ActivatedRoute, etc...
+	attribute directive: routerLink etc.
+	component: <router-outlet>...
+	types: Route, Routes, RouterState etc.
+
+
+
+Route => Routes(Route[])
+
+products:
+products => ProductListComponent
+products/view/1 => ProductDetailComponent
+products/update/1 => UpdateProductComponent
+products/add => AddProductComponent
+
+authentication:
+auth/login => LoginComponent
+auth/registern => RegisterComponent
+
+common:
+home => HomeComponent
+	   => HomeComponent
+
+anything-else: PageNotFoundComponent
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,6 +6,8 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { UpdateProductComponent } from './components/update-product/update-product.component';
 import { ProductService } from './services/product.service';
 import { SERVICE_CLASS_TYPE, SERVICE_TOKEN } from '../config/constants';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductsRoutingModule } from './products-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { SERVICE_CLASS_TYPE, SERVICE_TOKEN } from '../config/constants';
     UpdateProductComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, HttpClientModule, ProductsRoutingModule
   ],
   exports: [ProductListComponent],
   providers: [
