@@ -1,4 +1,3 @@
-import { products } from "src/app/repository/products";
 import { ServiceContract } from "./service.contract";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
@@ -14,11 +13,22 @@ import { Observable } from "rxjs";
 // })
 @Injectable()
 export class ProductService implements ServiceContract {
+
     constructor(private _http: HttpClient) {
-        // console.log('product service created')
+    }
+    getProduct(id: number): Observable<ApiResponse<Product>> {
+        return this._http.get<ApiResponse<Product>>(`${API_BASE_URL}/${id}`)
+    }
+    addProduct(product: Product): Observable<ApiResponse<Product[]>> {
+        return this._http.post<ApiResponse<Product[]>>(API_BASE_URL, product)
+    }
+    updateProduct(id: number, product: Product): Observable<ApiResponse<Product[]>> {
+        return this._http.put<ApiResponse<Product[]>>(`${API_BASE_URL}/${id}`, product)
+    }
+    deleteProduct(id: number): Observable<ApiResponse<Product[]>> {
+        return this._http.delete<ApiResponse<Product[]>>(`${API_BASE_URL}/${id}`)
     }
     getProducts() {
-        const obs: Observable<ApiResponse<Product[]>> = this._http.get<ApiResponse<Product[]>>(API_BASE_URL)
-        return [...products]
+        return this._http.get<ApiResponse<Product[]>>(API_BASE_URL)
     }
 }
