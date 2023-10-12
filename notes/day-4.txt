@@ -19,7 +19,7 @@ Service and Dependency Injection - Part-2
 	b. use of @Injectable() decorator
 
 
-	
+Service Registration:	
 	register provider for service => who provides imformation of service to angular injector (the one who creates instance of service and supplied the reference of the object to anyone who needs that)
 	a. service name as provider name
 	b. some other token as provider name for the service
@@ -53,7 +53,21 @@ http://127.0.0.1:3003/auth/authenticate POST		user		{"message":"", data:"" }
 http://127.0.0.1:3003/auth/authenticate POST		user		{"message":"", data:null }
 
 
+Http Requests from Angular:
+built-in service class: HttpClient
+module where this class is registered: HttpClientModule
+package: @angular/common/http
 
+the methods of HttpClient class returns an Objservable to store the incoming response in future, since the reponse might take some time to arrive
+whenever the response arrives fro backend, the response will be stored in that Observable object
+One must Subscribe to that Observable object in order to get the data from the Observable
+package: rxjs (Reactive Extensions for JavaScript)
+
+In angular, whoever needs DI of any service, that someone must be decorated with @Injectable()
+@Component, @Pipe, @Directive, @NgModule => all of them implements @Injectable()
+
+If you ask for DI of any service in another service, the another service must be decorated with @Injectable()
+best practice: always use @Injectable() with service class
 
 
 
