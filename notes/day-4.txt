@@ -25,4 +25,40 @@ Service and Dependency Injection - Part-2
 	b. some other token as provider name for the service
 
 
+Backend description:
+
+URL									 		METHOD		DATA				RESPONSE
+----------------------------------------------------------------------------------------
+products:
+http://127.0.0.1:3003/products 			GET		NA			{"message":"", "data":[{},{},..] }
+
+http://127.0.0.1:3003/products/{id} 	GET		id			{"message":"", "data":{} }
+http://127.0.0.1:3003/products/{id} 	GET		id			{"message":"", "data":null }
+
+http://127.0.0.1:3003/products 			POST		product	{"message":"", "data":[{},{},..] }
+http://127.0.0.1:3003/products 			POST		product	{"message":"", "data":null }
+
+http://127.0.0.1:3003/products/{id}		PUT	product,id	{"message":"", "data":[{},{},..] }
+http://127.0.0.1:3003/products/{id}		PUT	product,id	{"message":"", "data":null }
+
+http://127.0.0.1:3003/products/{id} 	DELETE	id			{"message":"", "data":[{},{},..] }
+http://127.0.0.1:3003/products/{id} 	DELETE	id			{"message":"", "data":null }
+
+auth:
+
+http://127.0.0.1:3003/auth/register		POST		user		{"message":"", data:{} }
+http://127.0.0.1:3003/auth/register		POST		user		{"message":"", data:null }
+
+http://127.0.0.1:3003/auth/authenticate POST		user		{"message":"", data:"" }
+http://127.0.0.1:3003/auth/authenticate POST		user		{"message":"", data:null }
+
+
+
+
+
+
+
+
+
+
 
