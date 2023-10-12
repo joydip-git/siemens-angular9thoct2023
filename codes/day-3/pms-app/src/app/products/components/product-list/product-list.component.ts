@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductService } from '../../services/product.service';
-//import { products } from 'src/app/repository/products';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  //providers: [ProductService]
 })
 export class ProductListComponent implements OnInit {
-  //productRecords = products
+
   productRecords?: Product[];
+  private service: ProductService;
 
-
-  constructor() {
-    //this.productRecords = new ProductService().getProducts()
+  constructor(_service: ProductService) {
+    this.service = _service
+    console.log('product list component created')
   }
   ngOnInit(): void {
-    this.productRecords = new ProductService().getProducts()
+    this.productRecords = this.service.getProducts()
   }
 }

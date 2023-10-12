@@ -4,6 +4,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,11 @@ import { UpdateProductComponent } from './components/update-product/update-produ
   imports: [
     CommonModule
   ],
-  exports: [ProductListComponent]
+  exports: [ProductListComponent],
+  providers: [ProductService]
 })
-export class ProductsModule { }
+export class ProductsModule {
+  constructor() {
+    console.log('product module created')
+  }
+}

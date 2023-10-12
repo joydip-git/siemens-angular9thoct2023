@@ -1,0 +1,28 @@
+Service and Dependency Injection - Part-1
+	a. create service
+	b. register a provider for service
+	c. consume service	
+	d. using custom provider for service
+
+Making HTTP Requests from Angular application:
+	a. HttpClient service from HttpClient Module
+	b. making HTTP requests using HttpClient's methods like: get(), put(), post(), delete()
+	c. mapping RESTful API server rseponse to application model
+	d. using Observable from rxjs (Reactive Extensions for JavaScript)
+	e. using operator methods of Observable
+	f. Subscribing to an Observable using Observer
+	g. Subscription and unsubscribing a subscription
+
+Service and Dependency Injection - Part-2
+
+	a. use some other service in a service
+	b. use of @Injectable() decorator
+
+
+	
+	register provider for service => who provides imformation of service to angular injector (the one who creates instance of service and supplied the reference of the object to anyone who needs that)
+	a. service name as provider name
+	b. some other token as provider name for the service
+
+
+

@@ -21,4 +21,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    console.log('app module created')
+  }
+}

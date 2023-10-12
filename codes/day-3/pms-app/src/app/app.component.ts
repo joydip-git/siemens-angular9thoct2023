@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pms-app';
+  constructor() {
+    console.log('app component created')
+  }
 }
