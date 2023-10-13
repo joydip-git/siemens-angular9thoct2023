@@ -16,9 +16,18 @@ Pipe:
 
 	@Pipe({name:'productfilter'})
 
-	class FilterProductPipe{
+	class FilterProductPipe implements PipeTransform{
 		transform(arg:any, ...add-args:any[]){
    	}
 	}
+
+
+Forms:
+package: @angular/forms
+modules: 
+	FormsModule => FormBuilder (service)
+	ReactiveFormsModule => formControl, formControlName, formGroup directives
+	other types: FormControl, FormGroup etc.
+
 
 							

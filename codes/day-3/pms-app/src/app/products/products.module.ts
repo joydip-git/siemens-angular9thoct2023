@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsRoutingModule } from './products-routing.module';
 import { FilterComponent } from './components/filter/filter.component';
 import { FilterProductPipe } from './pipes/filter-product.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FilterProductPipe } from './pipes/filter-product.pipe';
     FilterProductPipe
   ],
   imports: [
-    CommonModule, HttpClientModule, ProductsRoutingModule
+    CommonModule, HttpClientModule, ProductsRoutingModule, FormsModule, ReactiveFormsModule
   ],
   exports: [ProductListComponent],
   providers: [
