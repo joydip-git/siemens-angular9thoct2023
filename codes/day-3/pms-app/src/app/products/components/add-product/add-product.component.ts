@@ -57,7 +57,7 @@ export class AddProductComponent implements OnDestroy {
 
           const productToAdd: Product = {
             ...this.addForm.value,
-            imageUrl: imageBlobData?.toString()
+            imageUrl: imageBlobData
           }
           this.subscription = this.service
             .addProduct(productToAdd)
@@ -67,11 +67,15 @@ export class AddProductComponent implements OnDestroy {
                   window.alert('product added....')
                   this.router.navigate(['./products'])
                 } else {
-                  window.alert('product could not be added....')
+                  window.alert(`product could not be added....${response.message}`)
                 }
               },
-              error: () => { },
-              complete: () => { }
+              error: (err) => {
+                window.alert(err.message)
+              },
+              complete: () => {
+                //this.router.navigate(['./products'])
+              }
             })
         }
       )

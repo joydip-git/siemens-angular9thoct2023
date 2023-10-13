@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   isRequestComplete = false
   errorMessage = ''
   private subscription?: Subscription;
+  private deleteSubscription?: Subscription;
   filterText = ''
 
   //private service: ProductService;
@@ -30,13 +31,40 @@ export class ProductListComponent implements OnInit, OnDestroy {
     //console.log(arg)
     this.filterText = arg
   }
-
+  delete(id: number) {
+    this.deleteSubscription = this._service
+      .deleteProduct(id)
+      .subscribe({
+        next: (response) => {
+          if (response.data != null) {
+            //this.productRecords = response.data
+            this.isRequestComplete = true
+            this.errorMessage = ''
+            window.alert('record deleted')
+          } else {
+            this.errorMessage = response.message
+            this.isRequestComplete = true
+          }
+        },
+        error: (err) => {
+          this.errorMessage = err.message
+          this.isRequestComplete = true
+        },
+        complete: () => {
+          //use this technique, if delete api does not return updated bakend data
+          this.getRecords()
+        }
+      })
+  }
   ngOnDestroy(): void {
     console.log('product list component is going to be destroyed now...')
     this.subscription?.unsubscribe()
+    this.deleteSubscription?.unsubscribe()
   }
   ngOnInit(): void {
-
+    this.getRecords()
+  }
+  private getRecords() {
     this.subscription =
       this._service.getProducts()
         .subscribe({
