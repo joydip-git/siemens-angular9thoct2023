@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   isRequestComplete = false
   errorMessage = ''
   private subscription?: Subscription;
+  filterText = ''
 
   //private service: ProductService;
 
@@ -24,6 +25,12 @@ export class ProductListComponent implements OnInit, OnDestroy {
   constructor(@Inject(SERVICE_TOKEN) private _service: ServiceContract) {
     console.log('product list component created')
   }
+
+  updateFilterText(arg: string) {
+    //console.log(arg)
+    this.filterText = arg
+  }
+
   ngOnDestroy(): void {
     console.log('product list component is going to be destroyed now...')
     this.subscription?.unsubscribe()

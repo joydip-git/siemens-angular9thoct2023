@@ -8,13 +8,17 @@ import { ProductService } from './services/product.service';
 import { SERVICE_CLASS_TYPE, SERVICE_TOKEN } from '../config/constants';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsRoutingModule } from './products-routing.module';
+import { FilterComponent } from './components/filter/filter.component';
+import { FilterProductPipe } from './pipes/filter-product.pipe';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
     AddProductComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    FilterComponent,
+    FilterProductPipe
   ],
   imports: [
     CommonModule, HttpClientModule, ProductsRoutingModule

@@ -5,4 +5,13 @@ ActivatedRoute => stored current navigation information, such as, which route da
 
 every time you navigate from one route to another route, an instance of ActivatedRoute is created.
 In this way angular keeps history of every navigation by creating a tree of ActivatedRoute objects
+
+Router => built-in service class from RouterModule
+
+Pipe:
+	<value-to-be-transformed>|<pipe-name>:add-arg-1:add-arg-2:......
+
+	pipe-name(arg:any, ...add-args:any[]){
+   }
+
 							

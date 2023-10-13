@@ -1,1 +1,25 @@
-<p>product-detail works!</p>
+<ng-template #loadingTemplate>
+    <span>Loading...please wait</span>
+</ng-template>
+<ng-template #errorTemplate>
+    <span>{{errorMessage}}</span>
+</ng-template>
+<ng-template #noRecordTemplate>
+    <span>No record found</span>
+</ng-template>
+
+
+<div *ngIf="isRequestComplete;else loadingTemplate">
+    <div *ngIf="errorMessage=='';else errorTemplate">
+        <div *ngIf="productInfo;else noRecordTemplate">
+            <h3> Deatils of {{productInfo.productName}}</h3>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="goBack()">
+                &lt;
+                &nbsp;&nbsp;
+                Go Back
+            </button>
+        </div>
+    </div>
+</div>

@@ -15,6 +15,11 @@
     <span>No products found...</span>
 </ng-template>
 
+
+<app-filter (filterValueChanged)="updateFilterText($event)"></app-filter>
+
+<br>
+
 <div *ngIf="isRequestComplete;else loadingTemplate">
     <div *ngIf="errorMessage=='';else errorTemplate">
         <table *ngIf="productRecords && productRecords.length>0;else noDataTemplate" class="table table-hover">
@@ -28,16 +33,16 @@
                 </tr>
             </thead>
             <tbody class="table-info">
-                <tr *ngFor="let p of productRecords">
+                <tr *ngFor="let p of (productRecords|productfilter:filterText)">
                     <td>
                         <img [src]="p.imageUrl" alt="NA" [title]="p.productName"
                             [routerLink]="['/products/view',p.productId]">
                     </td>
                     <td>
-                        {{p.productName}}
+                        {{p.productName|uppercase}}
                     </td>
                     <td>
-                        {{p.price}}
+                        {{p.price|currency:'INR'}}
                     </td>
                     <td>
                         {{p.starRating}}

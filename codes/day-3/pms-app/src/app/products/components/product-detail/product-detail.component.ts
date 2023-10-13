@@ -1,5 +1,5 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { ServiceContract } from '../../services/service.contract';
 import { SERVICE_TOKEN } from 'src/app/config/constants';
 import { Subscription } from 'rxjs';
@@ -19,10 +19,16 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private currentRoute: ActivatedRoute,
+    private router: Router,
     @Inject(SERVICE_TOKEN) private _service: ServiceContract
   ) {
 
   }
+
+  goBack() {
+    this.router.navigate(['/products'])
+  }
+
   ngOnDestroy(): void {
     this.subscription?.unsubscribe()
   }
