@@ -1,10 +1,11 @@
 import { Component, Inject, OnDestroy } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SERVICE_TOKEN } from 'src/app/config/constants';
 import { Product } from 'src/app/models/product';
 import { ServiceContract } from '../../services/service.contract';
 import { Subscription } from 'rxjs';
 import { Router } from "@angular/router";
+import { productCodeValidator } from '../../validators/product-code.validator';
 
 @Component({
   selector: 'app-add-product',
@@ -21,30 +22,51 @@ export class AddProductComponent implements OnDestroy {
     @Inject(SERVICE_TOKEN) private service: ServiceContract,
     private router: Router) {
     // this.addForm = new FormGroup({
-    //   productId: new FormControl(0),
-    //   productName: new FormControl(''),
-    //   productCode: new FormControl(''),
-    //   price: new FormControl(0),
-    //   starRating: new FormControl(0),
-    //   description: new FormControl(''),
-    //   releaseDate: new FormControl()
+    //   productId: new FormControl(0, Validators.required),
+    //   productName: new FormControl('', Validators.required),
+    //   productCode: new FormControl('', Validators.required),
+    //   price: new FormControl(0, Validators.required),
+    //   starRating: new FormControl(0, Validators.required),
+    //   description: new FormControl('', Validators.required),
+    //   releaseDate: new FormControl(new Date().toDateString(), Validators.required)
     // })
     this.addForm = this.builder.group({
-      productId: [0],
-      productName: [''],
-      productCode: [''],
-      price: [0],
-      starRating: [0],
-      description: [''],
-      releaseDate: []
+      productId: [0, Validators.required],
+      productName: ['', [Validators.required]],
+      productCode: ['', [Validators.required, productCodeValidator]],
+      price: [0, [Validators.required, Validators.max(1000)]],
+      starRating: [0, Validators.required],
+      description: ['', Validators.required],
+      releaseDate: [new Date().toDateString(), Validators.required]
     })
+  }
+  get productId() {
+    return this.addForm.get('productId')
+  }
+  get productName() {
+    return this.addForm.get('productName')
+  }
+  get productCode() {
+    return this.addForm.get('productCode')
+  }
+  get description() {
+    return this.addForm.get('description')
+  }
+  get price() {
+    return this.addForm.get('price')
+  }
+  get starRating() {
+    return this.addForm.get('starRating')
+  }
+  get releaseDate() {
+    return this.addForm.get('releaseDate')
   }
   ngOnDestroy(): void {
     this.subscription?.unsubscribe()
   }
   submitData(element: HTMLInputElement) {
     // console.log(this.addForm.value)
-    //console.log(this.addForm.get('productId'))
+    console.log(this.addForm.get('price'))
     if (element.files != null) {
       const uploadedFile = element.files[0]
 

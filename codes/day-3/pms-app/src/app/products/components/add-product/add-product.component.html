@@ -6,29 +6,71 @@
             <!-- <input type="text" id="txtId" class="form-control" [formControl]="idCtrl"> -->
             <input type="number" id="txtId" class="form-control" formControlName="productId">
         </div>
+        <div *ngIf="productId?.errors">
+            <div *ngIf="productId?.errors?.['required'] && productId?.touched">
+                Please enter a productid
+            </div>
+        </div>
         <div class="form-group">
             <label for="txtName" class="form-label mt-4">Name:</label>
             <input type="text" id="txtName" class="form-control" formControlName="productName">
+        </div>
+        <div *ngIf="productName?.errors">
+            <div *ngIf="productName?.errors?.['required'] && productName?.touched">
+                Please enter a product name
+            </div>
         </div>
         <div class="form-group">
             <label for="txtDesc" class="form-label mt-4">Description:</label>
             <textarea id="txtDesc" cols="30" rows="10" class="form-control" formControlName="description"></textarea>
         </div>
+        <div *ngIf="description?.errors">
+            <div *ngIf="description?.errors?.['required'] && description?.touched">
+                Please enter a productid
+            </div>
+        </div>
         <div class="form-group">
             <label for="txtCode" class="form-label mt-4">Code:</label>
             <input type="text" id="txtCode" class="form-control" formControlName="productCode">
+        </div>
+        <div *ngIf="productCode?.errors">
+            <div *ngIf="productCode?.errors?.['required'] && productCode?.touched">
+                Please enter a product code
+            </div>
+            <div *ngIf="productCode?.errors?.['codeerror'] && productCode?.touched">
+                length of code: {{productCode?.errors?.['codeerror'].actual}}, should be
+                {{productCode?.errors?.['codeerror'].allowed}}
+            </div>
         </div>
         <div class="form-group">
             <label for="txtRating" class="form-label mt-4">Rating:</label>
             <input type="number" id="txtRating" class="form-control" formControlName="starRating">
         </div>
+        <div *ngIf="starRating?.errors">
+            <div *ngIf="starRating?.errors?.['required'] && starRating?.touched">
+                Please enter a productid
+            </div>
+        </div>
         <div class="form-group">
             <label for="txtPrice" class="form-label mt-4">Price:</label>
             <input type="number" id="txtPrice" class="form-control" formControlName="price">
         </div>
+        <div *ngIf="price?.errors">
+            <div *ngIf="price?.errors?.['required'] && price?.touched">
+                Please enter a productid
+            </div>
+            <div *ngIf="price?.errors?.['max'] && price?.touched">
+                Enter value less than {{price?.errors?.['max'].max}}, you have entered {{price?.errors?.['max'].actual}}
+            </div>
+        </div>
         <div class="form-group">
             <label for="txtDate" class="form-label mt-4">Released On:</label>
             <input type="date" id="txtDate" class="form-control" formControlName="releaseDate">
+        </div>
+        <div *ngIf="releaseDate?.errors">
+            <div *ngIf="releaseDate?.errors?.['required'] && releaseDate?.touched">
+                Please enter a productid
+            </div>
         </div>
         <div class="form-group">
             <label for="txtImage" class="form-label mt-4">Upload Image:</label>
@@ -36,7 +78,7 @@
         </div>
         <br>
         <div class="center-style">
-            <input type="submit" value="Save" class="btn btn-primary">
+            <input type="submit" value="Save" class="btn btn-primary" [disabled]="!addForm.valid">
             &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="Cancel" class="btn btn-alert">
         </div>
