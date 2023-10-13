@@ -15,6 +15,7 @@ import { Observable } from "rxjs";
 export class ProductService implements ServiceContract {
 
     constructor(private _http: HttpClient) {
+        console.log('product service created...')
     }
     getProduct(id: number): Observable<ApiResponse<Product>> {
         return this._http.get<ApiResponse<Product>>(`${API_BASE_URL}/${id}`)

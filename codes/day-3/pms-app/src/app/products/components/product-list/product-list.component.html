@@ -17,7 +17,7 @@
 
 <div *ngIf="isRequestComplete;else loadingTemplate">
     <div *ngIf="errorMessage=='';else errorTemplate">
-        <table *ngIf="productRecords && productRecords.length>0;else noDataTemplate">
+        <table *ngIf="productRecords && productRecords.length>0;else noDataTemplate" class="table table-hover">
             <thead>
                 <tr>
                     <th>Image</th>
@@ -27,10 +27,11 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-info">
                 <tr *ngFor="let p of productRecords">
                     <td>
-                        <img [src]="p.imageUrl" alt="NA" [title]="p.productName">
+                        <img [src]="p.imageUrl" alt="NA" [title]="p.productName"
+                            [routerLink]="['/products/view',p.productId]">
                     </td>
                     <td>
                         {{p.productName}}
@@ -42,7 +43,7 @@
                         {{p.starRating}}
                     </td>
                     <td>
-                        <button type="button">Delete</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             </tbody>

@@ -1,0 +1,8 @@
+one route => another route
+ 		 navigation
+
+ActivatedRoute => stored current navigation information, such as, which route data was passed, which component is currently loaded in router outlet etc. It is a built-in service class.
+
+every time you navigate from one route to another route, an instance of ActivatedRoute is created.
+In this way angular keeps history of every navigation by creating a tree of ActivatedRoute objects
+							

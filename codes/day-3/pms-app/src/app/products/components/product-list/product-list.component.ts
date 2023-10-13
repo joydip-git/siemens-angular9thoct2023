@@ -22,8 +22,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
   //pass reference of a service class to the parameter _service, associated with a token (provider name) 'SERVICE_TOKEN'
   //@Inject() is the decorator for a paremeter
   constructor(@Inject(SERVICE_TOKEN) private _service: ServiceContract) {
+    console.log('product list component created')
   }
   ngOnDestroy(): void {
+    console.log('product list component is going to be destroyed now...')
     this.subscription?.unsubscribe()
   }
   ngOnInit(): void {
