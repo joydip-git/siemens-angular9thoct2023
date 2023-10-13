@@ -11,7 +11,14 @@ Router => built-in service class from RouterModule
 Pipe:
 	<value-to-be-transformed>|<pipe-name>:add-arg-1:add-arg-2:......
 
-	pipe-name(arg:any, ...add-args:any[]){
-   }
+	//rest operator (...add-args)
+	//allows you to call the method and pass n number of arguments directly without an array
+
+	@Pipe({name:'productfilter'})
+
+	class FilterProductPipe{
+		transform(arg:any, ...add-args:any[]){
+   	}
+	}
 
 							
